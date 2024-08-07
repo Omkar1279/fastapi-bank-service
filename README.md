@@ -1,15 +1,20 @@
 # FastAPI Bank Service
 
-A FastAPI application for managing bank and branch information. This service provides endpoints to retrieve bank details and branch information using standard REST API practices.
-
 ## Table of Contents
 
+- [Project Overview](#project-overview)
 - [Features](#features)
 - [Installation](#installation)
 - [Usage](#usage)
 - [Endpoints](#endpoints)
 - [Testing](#testing)
 - [Docker](#docker)
+- [Methods Used to Solve the Problem](#methods-used-to-solve-the-problem)
+- [Time Taken to Complete the Assignment](#time-taken-to-complete-the-assignment)
+
+## Project Overview
+
+This project is a FastAPI-based service for managing and querying bank branches. It provides endpoints to fetch branches by IFSC code or bank ID and supports pagination. The backend uses PostgreSQL for data storage and has a Docker setup for database management.
 
 ## Features
 
@@ -107,11 +112,7 @@ A FastAPI application for managing bank and branch information. This service pro
 
    The test cases are located in the `tests` directory.
 
-Sure! Here's a section you can add to your `README.md` file to describe the Docker setup for your FastAPI project, including the Dockerfile for PostgreSQL:
-
----
-
-## Docker Setup
+## Docker
 
 This project includes a Docker setup for running a PostgreSQL database. The `Dockerfile` provided sets up a PostgreSQL instance with a default configuration and initializes it with an SQL script.
 
@@ -174,3 +175,43 @@ You can connect to your PostgreSQL database using any PostgreSQL client with the
 ### SQL Initialization Script
 
 The `indian_banks.sql` script located in the Docker context directory is copied into `/docker-entrypoint-initdb.d/` inside the container. This script is automatically executed during container startup to initialize the database schema.
+
+## Methods Used to Solve the Problem
+
+### 1. **FastAPI Framework**
+
+- **FastAPI**: Utilized for building the RESTful API with Python. It allows for rapid development and automatic generation of interactive API documentation.
+- **APIRouter**: Used to organize the API endpoints into separate modules for better maintainability.
+
+### 2. **SQLAlchemy for ORM**
+
+- **SQLAlchemy**: Employed for object-relational mapping to handle database operations and query management.
+- **Session Management**: Integrated with FastAPI to manage database sessions and ensure proper cleanup.
+
+### 3. **Pydantic for Data Validation**
+
+- **Pydantic**: Used for defining data models and validating request and response data. It ensures that the data conforms to the specified schema.
+
+### 4. **CRUD Operations**
+
+- **CRUD Functions**: Implemented functions for Create, Read, Update, and Delete operations to interact with the database. These functions handle querying and data manipulation.
+
+### 5. **Testing with Pytest**
+
+- **Pytest**: Used for writing unit tests to ensure the correctness of API endpoints. Tests cover various scenarios, including valid and invalid inputs, and validate response statuses and data.
+
+### 6. **Docker for Database Management**
+
+- **Docker**: Used to containerize the PostgreSQL database. This setup includes environment variables for database configuration and an SQL script for initializing the database schema.
+
+## Time Taken to Complete the Assignment
+
+The time taken to complete this assignment was approximately **8 Hours**. This includes:
+
+- Setting up the FastAPI project and writing models and schemas.
+- Configuring the endpoints.
+- Integrating SQLAlchemy for database operations.
+- Writing and testing CRUD operations.
+- Creating Docker configurations for PostgreSQL.
+- Running the app and testing using Postman and the FastAPI docs webpage.
+- Writing unit tests and validating the functionality.
