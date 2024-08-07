@@ -16,8 +16,8 @@ def get_db():
 
 @router.get("/by_bank/{bank_id}", response_model=List[schemas.Branch])
 def read_branches(bank_id: int, skip: int = 0, limit: int = 10, db: Session = Depends(get_db)):
-    branches = crud.get_branches_by_bank(db, bank_id=bank_id, skip=skip, limit=limit)
-    if branches is None:
+    branches = crud.get_branches_by_bankid(db, bank_id=bank_id, skip=skip, limit=limit)
+    if not branches:  # Check if branches is an empty list or None
         raise HTTPException(status_code=404, detail="Branches not found")
     return branches
 
