@@ -8,10 +8,10 @@ from sqlalchemy.orm import sessionmaker
 load_dotenv()
 
 # Get the database URL from environment variable
-SQLALCHEMY_DATABASE_URL = os.getenv("DATABASE_URL")
+POSTGRESS_DATABASE_URL = os.getenv("DATABASE_URL")
 
 # Create the SQLAlchemy engine
-engine = create_engine(SQLALCHEMY_DATABASE_URL)
+engine = create_engine(POSTGRESS_DATABASE_URL)
 
 # Create a configured "Session" class
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)

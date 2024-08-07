@@ -1,4 +1,5 @@
 from pydantic import BaseModel
+from typing import List  # Import List from typing
 
 
 class Bank(BaseModel):
@@ -6,7 +7,7 @@ class Bank(BaseModel):
     name: str
 
     class Config:
-        orm_mode = True
+        from_attributes = True  # Updated config key
 
 
 class Branch(BaseModel):
@@ -19,4 +20,4 @@ class Branch(BaseModel):
     state: str
 
     class Config:
-        orm_mode = True
+        from_attributes = True  # Updated config key

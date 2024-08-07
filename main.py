@@ -1,13 +1,7 @@
 from fastapi import FastAPI
+from api.endpoints import banks, branches
 
 app = FastAPI()
 
-
-@app.get("/")
-async def root():
-    return {"message": "Hello World"}
-
-
-@app.get("/hello/{name}")
-async def say_hello(name: str):
-    return {"message": f"Hello {name}"}
+app.include_router(banks.router, prefix="/banks", tags=["banks"])
+app.include_router(branches.router, prefix="/branches", tags=["branches"])
