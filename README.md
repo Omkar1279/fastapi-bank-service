@@ -27,7 +27,7 @@ This project is a FastAPI-based service for managing and querying bank branches.
 1. **Clone the Repository:**
 
    ```bash
-   git clone https://github.com/your-username/fastapi-bank-service.git
+   git clone https://github.com/Omkar1279/fastapi-bank-service.git
    cd fastapi-bank-service
    ```
 
